@@ -1,11 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { ReactNode, createContext, useState } from 'react'
+import { createContext, useState } from 'react'
 import { TOKEN_POST, USER_GET } from '../api'
 import React from 'react';
-
-interface IUserStorage {
-  children: ReactNode
-}
 
 export type User = {
   id: number;
@@ -26,7 +22,7 @@ interface IUserContext {
 export const UserContext = createContext({} as IUserContext);
 export const useUserContext = () => React.useContext(UserContext);
 
-const UserStorage = ({ children }: IUserStorage) => {
+const UserStorage = ({ children }: React.PropsWithChildren) => {
   const [data, setData] = useState<User | null>(null)
   const [login, setLogin] = useState(false)
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
