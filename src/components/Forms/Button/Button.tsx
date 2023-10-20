@@ -1,6 +1,8 @@
 import styles from './Button.module.css'
 interface ButtonProps {
-  children: React.ReactNode
+  children?: React.ReactNode
+  disabled?: boolean
+  onClick?: (() => void) | undefined
 }
 
 const Button = ({ children, ...props }: ButtonProps) => {

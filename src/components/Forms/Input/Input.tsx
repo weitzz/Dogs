@@ -1,13 +1,13 @@
 import styles from './Input.module.css'
 
 interface InputProps {
-    label: string
-    type: string
-    name: string
-    value: string
-    error: string | null
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-    onBlur: () => void
+    label?: string
+    type?: string
+    name?: string
+    value?: string
+    error?: string | null
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+    onBlur?: () => void
 }
 
 const Input = ({ label, type, name, value, onChange, error, onBlur }: InputProps) => {

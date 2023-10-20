@@ -3,6 +3,7 @@ import styles from './Header.module.css'
 import { useUserContext } from '../../Hooks/userContext'
 import Dogs from '../../assets/dogs.svg'
 
+
 const Header = () => {
     const { user, login } = useUserContext();
     return (
