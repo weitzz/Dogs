@@ -4,6 +4,7 @@ import PhotoComments from './PhotoComments'
 import { IPhoto, TComment } from '../../types/types'
 import { useUserContext } from '../../Hooks/userContext'
 import PhotoDelete from './PhotoDelete'
+import Image from '../Helper/Image/Image'
 
 interface PhotoContentProps {
     data: {
@@ -18,7 +19,7 @@ const PhotoContent = ({ data }: PhotoContentProps) => {
     return (
         <div className={sytles.photo}>
             <div className={sytles.img}>
-                <img src={photo.src} alt={photo.title} />
+                <Image alt={photo.title} src={photo.src} />
             </div>
             <div className={sytles.details}>
                 <div>
