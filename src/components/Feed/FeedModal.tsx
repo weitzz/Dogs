@@ -4,7 +4,7 @@ import { IPhoto } from '../../types/types'
 import styles from './css/FeedModal.module.css'
 import { PHOTO_GET } from '../../api'
 import Error from '../Helper/Error'
-import Loading from '../Helper/Loading'
+import Loading from '../Helper/Loading/Loading'
 import PhotoContent from '../Photo/PhotoContent'
 
 type FeedModalProps = {

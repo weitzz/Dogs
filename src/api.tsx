@@ -4,9 +4,9 @@ export const API_URL = 'https://dogsapi.origamid.dev/json/'
 
 
 type PHOTOS_GETProps = {
-    page: number,
+    page?: number,
     total: number,
-    user: string | number
+    user?: number | string
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -92,13 +92,9 @@ export const PHOTOS_GET = ({ page, total, user }: PHOTOS_GETProps) => {
 }
 
 
-export const PHOTO_GET = (id: number) => {
+export const PHOTO_GET = (id: string) => {
     return {
         url: `${API_URL}api/photo/${id}`,
-        options: {
-            method: 'GET',
-            cache: 'no-store',
-        }
     }
 }
 

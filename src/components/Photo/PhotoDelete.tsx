@@ -13,7 +13,7 @@ const PhotoDelete = ({ id }: Props) => {
         if (confirm) {
             const { url, options } = PHOTO_DELETE(id)
             const { response } = await request(url, options)
-            if (response?.ok) window.location.reload();
+            if (response && response?.ok) window.location.reload();
         }
     }
     return (

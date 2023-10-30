@@ -10,7 +10,7 @@ const useFetch = () => {
 
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
-    const request = useCallback(async (url: string, options: {}) => {
+    const request = useCallback(async (url: string, options?: {}) => {
         let response
         let json
         try {

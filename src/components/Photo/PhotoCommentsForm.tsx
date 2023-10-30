@@ -10,9 +10,10 @@ import styles from './css/PhotoCommentsForm.module.css'
 interface PhotoCommentsFormProps {
     id: number
     setComments: React.Dispatch<React.SetStateAction<TComment[]>>
+    single: boolean
 }
 
-const PhotoCommentsForm = ({ id, setComments }: PhotoCommentsFormProps) => {
+const PhotoCommentsForm = ({ id, setComments, single }: PhotoCommentsFormProps) => {
     const [comment, setComment] = useState('')
     const { request, error } = useFetch()
 
@@ -32,7 +33,7 @@ const PhotoCommentsForm = ({ id, setComments }: PhotoCommentsFormProps) => {
     }
 
     return (
-        <form className={styles.form} onClick={handleSubmit}>
+        <form className={`${styles.form} ${single ? styles.single : ''}`} onClick={handleSubmit}>
             <textarea
                 className={styles.textarea}
                 id='comment'

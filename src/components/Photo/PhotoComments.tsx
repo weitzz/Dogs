@@ -8,10 +8,10 @@ import { TComment } from '../../types/types'
 type Props = {
     id: number;
     commentsList: TComment[];
-    // single: boolean
+    single: boolean
 }
 
-const PhotoComments = ({ id, commentsList }: Props) => {
+const PhotoComments = ({ id, commentsList, single }: Props) => {
     const [comments, setComments] = useState(() => commentsList)
     const commentSection = useRef<HTMLUListElement | null>(null)
     const { login } = useUserContext()
@@ -23,14 +23,14 @@ const PhotoComments = ({ id, commentsList }: Props) => {
     }, [comments, commentSection])
     return (
         <>
-            <ul ref={commentSection} className={styles.comments}>
+            <ul ref={commentSection} className={`${styles.comments} ${single ? styles.single : ""} `}>
                 {comments.map(comment => <li key={comment.comment_ID}>
                     <b>{comment.comment_author}:</b>
                     <span>{comment.comment_content}</span>
                 </li>)}
             </ul>
 
-            {login && <PhotoCommentsForm id={id} setComments={setComments} />}
+            {login && <PhotoCommentsForm id={id} setComments={setComments} single={single} />}
         </>
     )
 }
