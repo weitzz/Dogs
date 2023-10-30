@@ -1,7 +1,10 @@
+import Head from "../Helper/Head"
 
 const LoginReset = () => {
     return (
-        <div>LoginReset</div>
+        <div>
+            <Head title='Resete a senha' />
+        </div>
     )
 }
 

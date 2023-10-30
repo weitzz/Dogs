@@ -46,4 +46,5 @@ const Feed = ({ user }: FeedProps) => {
     )
 }
 
+
 export default Feed

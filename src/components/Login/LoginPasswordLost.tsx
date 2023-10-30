@@ -1,7 +1,10 @@
+import Head from "../Helper/Head"
 
 const LoginPasswordLost = () => {
     return (
-        <div>LoginPasswordLost</div>
+        <div>
+            <Head title='Perdeu a senha' />
+        </div>
     )
 }
 
