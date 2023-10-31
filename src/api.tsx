@@ -133,5 +133,33 @@ export const PHOTO_DELETE = (id: number) => {
 
 
 
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const PASSWORD_LOST = (body: {}) => {
+    return {
+        url: `${API_URL}api/password/lost`,
+        options: {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body)
+        },
+    }
+}
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const PASSWORD_RESET = (body: {}) => {
+    return {
+        url: `${API_URL}api/password/reset`,
+        options: {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body)
+        },
+    }
+}
+
 // https://dog.ceo/api/breeds/image/random
 //randomizar fotos

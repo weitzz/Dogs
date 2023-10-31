@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Enviar from '../../assets/enviar.svg'
 import useFetch from '../../Hooks/useFetch'
 import { COMMENT_POST } from '../../api'
-import Error from '../Helper/Error'
 import { TComment } from '../../types/types'
 import styles from './css/PhotoCommentsForm.module.css'
 
@@ -15,7 +14,7 @@ interface PhotoCommentsFormProps {
 
 const PhotoCommentsForm = ({ id, setComments, single }: PhotoCommentsFormProps) => {
     const [comment, setComment] = useState('')
-    const { request, error } = useFetch()
+    const { request } = useFetch()
 
     const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         event.preventDefault()
@@ -44,8 +43,6 @@ const PhotoCommentsForm = ({ id, setComments, single }: PhotoCommentsFormProps) 
             <button className={styles.button}>
                 <Enviar />
             </button>
-
-            <Error error={error} />
         </form>
     )
 }
