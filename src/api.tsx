@@ -161,5 +161,18 @@ export const PASSWORD_RESET = (body: {}) => {
     }
 }
 
+
+export const STATS_GET = () => {
+    return {
+        url: `${API_URL}api/stats`,
+        options: {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: "Bearer " + window.localStorage.getItem('token'),
+            },
+        },
+    }
+}
 // https://dog.ceo/api/breeds/image/random
 //randomizar fotos
